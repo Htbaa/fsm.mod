@@ -1,0 +1,194 @@
+<html><head><title>htbaapub.fsm reference</title>
+<link rel=stylesheet Type=text/css href='../../../../doc/bmxstyle.css'>
+</head><body>
+<table width=100% cellspacing=0><tr align=center><td class=small>&nbsp;</td>
+<td class=small width=1%><b>htbaapub.fsm:</b></td>
+<td class=small width=1%><a href=#consts class=small>Constants</a></td>
+<td class=small width=1%><a href=#types class=small>Types</a></td>
+<td class=small width=1%><a href=#modinfo class=small>Modinfo</a></td>
+<td class=small width=1%><a href='../../../../mod/htbaapub.mod/fsm.mod/fsm.bmx' class=small>Source</a></td>
+<td class=small>&nbsp;</td></tr></table>
+<h1>htbaapub.fsm</h1>
+<h1>Finite State Machine</h1>
+<p>An implementation of a Finite State Machine. Examples will come soon.<!--Take a look at the examples on how to use them.--></p>
+<!--
+<h2>Examples</h2>
+<p>Please take a look at one of the examples below.</p>
+<ul>
+	<li><a href="../examples/example1.bmx">example1.bmx</a></li>
+</ul>
+-->
+<h2><a name=consts></a>Constants Summary</h2><table class=doc width=100%><tr><td colspan=2>
+<a href=#FSM_MACH_NONE>FSM_MACH_NONE</a>
+, 
+<a href=#FSM_STATE_NONE>FSM_STATE_NONE</a>
+</td></tr>
+</table>
+<h2><a name=types></a>Types Summary</h2><table class=doc width=100%>
+<tr><td class=docleft width=1%><a href=#TFSMMachine>TFSMMachine</a></td><td class=docright>
+Finite Machine Type.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#TFSMState>TFSMState</a></td><td class=docright>
+Finite Machine State Type.
+</td></tr>
+</table>
+<h2
+ id=constsdet>Constants
+</h2>
+<table class=doc width=100% cellspacing=3 id=FSM_MACH_NONE>
+<tr><td class=doctop colspan=2>Const FSM_MACH_NONE:Int</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Default FSM Machine type.</td></tr>
+</table>
+<br>
+<table class=doc width=100% cellspacing=3 id=FSM_STATE_NONE>
+<tr><td class=doctop colspan=2>Const FSM_STATE_NONE:Int</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Default FSM State type.</td></tr>
+</table>
+<br>
+<h2
+ id=typesdet>Types
+</h2>
+<table class=doc width=100% cellspacing=3 id=TFSMMachine>
+<tr><td class=doctop colspan=2>Type TFSMMachine Extends TFSMState</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Finite Machine Type.</td></tr>
+</table>
+<table class=doc width=90% align=center><tr ><th class=doctop colspan=2 align=left><a name=TFSMMachine_methods></a>Methods Summary</th></tr>
+<tr><td class=docleft width=1%><a href=#AddState>AddState</a></td><td class=docright>
+Add a state to machine.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Create>Create</a></td><td class=docright>
+Create A Finite State Machine.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Free>Free</a></td><td class=docright>
+Free state machine.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#HandleMessage>HandleMessage</a></td><td class=docright>
+Handle incoming messages.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Reset>Reset</a></td><td class=docright>
+Reset the state machine.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetDefaultState>SetDefaultState</a></td><td class=docright>
+Set default state.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetGoalId>SetGoalId</a></td><td class=docright>
+Set goal id.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#TransitionState>TransitionState</a></td><td class=docright>
+Change state.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#UpdateMachine>UpdateMachine</a></td><td class=docright>
+Update State Machine. Handles state changeing and execution.
+</td></tr>
+</table>
+<table class=doc width=90% align=center><tr ><th class=doctop colspan=2 align=left><a name=TFSMMachine_functions></a>Functions Summary</th></tr>
+<tr><td class=docleft width=1%><a href=#CreateMachine>CreateMachine</a></td><td class=docright>
+Create A Finite State Machine * DEPRECATED *
+</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=AddState>
+<tr><td class=doctop colspan=2>Method AddState(state:TFSMState)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Add a state to machine.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Create>
+<tr><td class=doctop colspan=2>Method Create:TFSMMachine(state_type:Int = FSM_MACH_NONE, parent:Object)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Create A Finite State Machine.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Free>
+<tr><td class=doctop colspan=2>Method Free()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Free state machine.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=HandleMessage>
+<tr><td class=doctop colspan=2>Method HandleMessage:Int(message:Object)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Handle incoming messages.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Reset>
+<tr><td class=doctop colspan=2>Method Reset()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Reset the state machine.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetDefaultState>
+<tr><td class=doctop colspan=2>Method SetDefaultState(state:TFSMState)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Set default state.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetGoalId>
+<tr><td class=doctop colspan=2>Method SetGoalId(goal:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Set goal id.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=TransitionState>
+<tr><td class=doctop colspan=2>Method TransitionState:Int(goal:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Change state.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=UpdateMachine>
+<tr><td class=doctop colspan=2>Method UpdateMachine(t:Double)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Update State Machine. Handles state changeing and execution.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=CreateMachine>
+<tr><td class=doctop colspan=2>Function CreateMachine:TFSMMachine(state_type:Int = FSM_MACH_NONE, parent:Object) Final</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Create A Finite State Machine * DEPRECATED *</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>This function has been deprecated. Use the method Create() instead.</td></tr>
+</table>
+<br>
+<table class=doc width=100% cellspacing=3 id=TFSMState>
+<tr><td class=doctop colspan=2>Type TFSMState Abstract</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Finite Machine State Type.</td></tr>
+</table>
+<table class=doc width=90% align=center><tr ><th class=doctop colspan=2 align=left><a name=TFSMState_methods></a>Methods Summary</th></tr>
+<tr><td class=docleft width=1%><a href=#CheckTransitions>CheckTransitions</a></td><td class=docright>
+Check for transitions.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Enter>Enter</a></td><td class=docright>
+Method executed when this state is entered.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Free>Free</a></td><td class=docright>
+Freeing of state.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Init>Init</a></td><td class=docright>
+Method to execute when the State Machine is being setup.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#OnMessage>OnMessage</a></td><td class=docright>
+Handle an incoming message.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Quit>Quit</a></td><td class=docright>
+Method to execute when leaving this state.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Update>Update</a></td><td class=docright>
+Main loop of state.
+</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=CheckTransitions>
+<tr><td class=doctop colspan=2>Method CheckTransitions:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Check for transitions.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Enter>
+<tr><td class=doctop colspan=2>Method Enter()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Method executed when this state is entered.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Free>
+<tr><td class=doctop colspan=2>Method Free()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Freeing of state.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Init>
+<tr><td class=doctop colspan=2>Method Init()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Method to execute when the State Machine is being setup.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=OnMessage>
+<tr><td class=doctop colspan=2>Method OnMessage:Int(message:Object)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Handle an incoming message.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Quit>
+<tr><td class=doctop colspan=2>Method Quit()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Method to execute when leaving this state.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Update>
+<tr><td class=doctop colspan=2>Method Update(t:Double = 0)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Main loop of state.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Optionally assign the amount of time passed to t:Double. This is usually wanted with delta timing.</td></tr>
+</table>
+<br>
+<h2 id=modinfo>Module Information</h2>
+<table width=100%>
+<tr><th width=1%>Name</th><td>htbaapub.fsm</td></tr>
+<tr><th width=1%>Version</th><td>1.0</td></tr>
+<tr><th width=1%>Author</th><td>Christiaan Kras</td></tr>
+<tr><th width=1%>Git repository</th><td><a href='http://github.com/Htbaa/htbaapub.mod/'>http://github.com/Htbaa/htbaapub.mod/</a></td></tr>
+</body></html>
