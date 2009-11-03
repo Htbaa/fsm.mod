@@ -5,7 +5,7 @@ Rem
 EndRem
 Module htbaapub.fsm
 ModuleInfo "Name: htbaapub.fsm"
-ModuleInfo "Version: 1.00"
+ModuleInfo "Version: 1.01"
 ModuleInfo "Author: Christiaan Kras"
 ModuleInfo "Git repository: <a href='http://github.com/Htbaa/fsm.mod/'>http://github.com/Htbaa/fsm.mod/</a>"
 
