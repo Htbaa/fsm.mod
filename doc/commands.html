@@ -10,14 +10,13 @@
 <td class=small>&nbsp;</td></tr></table>
 <h1>htbaapub.fsm</h1>
 <h1>Finite State Machine</h1>
-<p>An implementation of a Finite State Machine. Examples will come soon.<!--Take a look at the examples on how to use them.--></p>
-<!--
+<p>An implementation of a Finite State Machine. Take a look at the example on how to use them.</p>
+<p>It may seem strange that TFSMMachine extends TFSMState. TFSMMachine being a state in itself makes it possible to create a nested FSM's.</p>
+<p>
 <h2>Examples</h2>
-<p>Please take a look at one of the examples below.</p>
 <ul>
 	<li><a href="../examples/example1.bmx">example1.bmx</a></li>
 </ul>
--->
 <h2><a name=consts></a>Constants Summary</h2><table class=doc width=100%><tr><td colspan=2>
 <a href=#FSM_MACH_NONE>FSM_MACH_NONE</a>
 , 
@@ -51,6 +50,7 @@ Finite Machine State Type.
 <table class=doc width=100% cellspacing=3 id=TFSMMachine>
 <tr><td class=doctop colspan=2>Type TFSMMachine Extends TFSMState</td></tr>
 <tr><td class=docleft width=1%>Description</td><td class=docright>Finite Machine Type.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>TFSMMachine extends TFSMState so you can use the machine itself as a state of another machine.</td></tr>
 </table>
 <table class=doc width=90% align=center><tr ><th class=doctop colspan=2 align=left><a name=TFSMMachine_methods></a>Methods Summary</th></tr>
 <tr><td class=docleft width=1%><a href=#AddState>AddState</a></td><td class=docright>
@@ -92,6 +92,7 @@ Create A Finite State Machine * DEPRECATED *
 </table>
 <table class=doc width=100% cellspacing=3 id=Create>
 <tr><td class=doctop colspan=2>Method Create:TFSMMachine(state_type:Int = FSM_MACH_NONE, parent:Object)</td></tr>
+<tr><td class=docleft width=1%>Returns</td><td class=docright>Finite Machine.</td></tr>
 <tr><td class=docleft width=1%>Description</td><td class=docright>Create A Finite State Machine.</td></tr>
 </table>
 <table class=doc width=100% cellspacing=3 id=Free>
@@ -100,11 +101,13 @@ Create A Finite State Machine * DEPRECATED *
 </table>
 <table class=doc width=100% cellspacing=3 id=HandleMessage>
 <tr><td class=doctop colspan=2>Method HandleMessage:Int(message:Object)</td></tr>
+<tr><td class=docleft width=1%>Returns</td><td class=docright>True/False.</td></tr>
 <tr><td class=docleft width=1%>Description</td><td class=docright>Handle incoming messages.</td></tr>
 </table>
 <table class=doc width=100% cellspacing=3 id=Reset>
 <tr><td class=doctop colspan=2>Method Reset()</td></tr>
 <tr><td class=docleft width=1%>Description</td><td class=docright>Reset the state machine.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Calls Quit() of the machine and states, re-initializes and starts with default state.</td></tr>
 </table>
 <table class=doc width=100% cellspacing=3 id=SetDefaultState>
 <tr><td class=doctop colspan=2>Method SetDefaultState(state:TFSMState)</td></tr>
@@ -113,9 +116,11 @@ Create A Finite State Machine * DEPRECATED *
 <table class=doc width=100% cellspacing=3 id=SetGoalId>
 <tr><td class=doctop colspan=2>Method SetGoalId(goal:Int)</td></tr>
 <tr><td class=docleft width=1%>Description</td><td class=docright>Set goal id.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal method.</td></tr>
 </table>
 <table class=doc width=100% cellspacing=3 id=TransitionState>
 <tr><td class=doctop colspan=2>Method TransitionState:Int(goal:Int)</td></tr>
+<tr><td class=docleft width=1%>Returns</td><td class=docright>True/False depending if the transition to the goal state was successful.</td></tr>
 <tr><td class=docleft width=1%>Description</td><td class=docright>Change state.</td></tr>
 </table>
 <table class=doc width=100% cellspacing=3 id=UpdateMachine>
@@ -157,7 +162,9 @@ Main loop of state.
 </table>
 <table class=doc width=100% cellspacing=3 id=CheckTransitions>
 <tr><td class=doctop colspan=2>Method CheckTransitions:Int()</td></tr>
+<tr><td class=docleft width=1%>Returns</td><td class=docright>ID of state to transition to. Make sure every state has a unique identifier.</td></tr>
 <tr><td class=docleft width=1%>Description</td><td class=docright>Check for transitions.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>In this method you can check if you want to transition to another state or not.</td></tr>
 </table>
 <table class=doc width=100% cellspacing=3 id=Enter>
 <tr><td class=doctop colspan=2>Method Enter()</td></tr>
