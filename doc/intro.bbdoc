@@ -1,9 +1,9 @@
 <h1>Finite State Machine</h1>
-<p>An implementation of a Finite State Machine. Examples will come soon.<!--Take a look at the examples on how to use them.--></p>
-<!--
+<p>An implementation of a Finite State Machine. Take a look at the example on how to use them.</p>
+<p>It may seem strange that TFSMMachine extends TFSMState. TFSMMachine being a state in itself makes it possible to create a nested FSM's.</p>
+
 <h2>Examples</h2>
-<p>Please take a look at one of the examples below.</p>
 <ul>
 	<li><a href="../examples/example1.bmx">example1.bmx</a></li>
 </ul>
--->
+
