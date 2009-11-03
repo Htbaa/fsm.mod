@@ -49,6 +49,8 @@ Type TFSMState Abstract
 	
 	Rem
 		bbdoc: Check for transitions
+		returns: ID of state to transition to. Make sure every state has a unique identifier
+		about: In this method you can check if you want to transition to another state or not
 	End Rem	
 	Method CheckTransitions:Int() 
 		Return FSM_STATE_NONE
@@ -78,6 +80,7 @@ End Type
 	
 Rem
 	bbdoc: Finite Machine Type
+	about: TFSMMachine extends TFSMState so you can use the machine itself as a state of another machine
 End Rem
 Type TFSMMachine Extends TFSMState
 
@@ -92,6 +95,7 @@ Type TFSMMachine Extends TFSMState
 	
 	Rem
 		bbdoc: Create A Finite State Machine
+		returns: Finite Machine
 	End Rem
 	Method Create:TFSMMachine(state_type:Int = FSM_MACH_NONE, parent:Object)
 		Self.m_type = state_type
@@ -112,6 +116,7 @@ Type TFSMMachine Extends TFSMState
 	
 	Rem
 		bbdoc: Handle incoming messages
+		returns: True/False
 	End Rem
 	Method HandleMessage:Int(message:Object)
 		If Not Self.m_currentState
@@ -173,6 +178,7 @@ Type TFSMMachine Extends TFSMState
 		
 	Rem
 		bbdoc: Set goal id
+		about: Internal method
 	End Rem
 	Method SetGoalId(goal:Int)
 		Self.m_goalID = goal
@@ -180,6 +186,7 @@ Type TFSMMachine Extends TFSMState
 		
 	Rem
 		bbdoc: Change state
+		returns: True/False depending if the transition to the goal state was successful
 	End Rem
 	Method TransitionState:Int(goal:Int)
 		'Don't do anything if you have no states
@@ -200,6 +207,7 @@ Type TFSMMachine Extends TFSMState
 		
 	Rem
 		bbdoc: Reset the state machine
+		about: Calls Quit() of the machine and states, re-initializes and starts with default state
 	End Rem
 	Method Reset() 
 		Self.Quit() 
